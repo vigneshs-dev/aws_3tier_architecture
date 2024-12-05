@@ -10,6 +10,9 @@ COPY . .
 # Install dependencies
 RUN npm install
 
+# Install MySQL2
+RUN npm install mysql2
+
 # Install pm2 globally
 RUN npm install -g pm2
 
