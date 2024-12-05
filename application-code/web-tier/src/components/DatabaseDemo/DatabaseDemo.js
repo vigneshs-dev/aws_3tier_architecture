@@ -2,9 +2,8 @@
 import React, {Component} from 'react';
 import './DatabaseDemo.css';
 
+// const API_URL = '/api';
 const API_URL = 'http://localhost:4000';
-
-// const API_URL = 'http://app-tier:4000';
 
 
 class DatabaseDemo extends Component {
@@ -65,6 +64,7 @@ class DatabaseDemo extends Component {
        const requestOptions = {
            method: 'DELETE'
        }
+      //  fetch(`/api/transaction`, requestOptions)
        fetch(`${API_URL}/transaction`, requestOptions)
        .then(response => response.json())
        .then(data => this.populateData())
@@ -82,6 +82,7 @@ class DatabaseDemo extends Component {
             body: JSON.stringify({"amount":this.state.text_amt, "desc" :this.state.text_desc})
         }
         
+      //   fetch(`/api/transaction`, requestOptions)
         fetch(`${API_URL}/transaction`, requestOptions)
         .then(response => response.json())
         .then(data => this.populateData())
